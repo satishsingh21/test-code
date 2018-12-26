@@ -1,6 +1,6 @@
 const user = require('./../models/userModel')
 const {OAuth2Client} = require('google-auth-library');
-const client = new OAuth2Client('259138665692-fu7djqqbuj7vesmqtrb3idg4hggmcgrg.apps.googleusercontent.com');
+const client = new OAuth2Client('**********************.apps.googleusercontent.com');
 
 var controller = {}
 controller.validateToken = function(req, res, next){
@@ -11,7 +11,7 @@ controller.validateToken = function(req, res, next){
 async function verify(req, res ,next) {
     const ticket = await client.verifyIdToken({
         idToken: req.body.token,
-        audience: '259138665692-fu7djqqbuj7vesmqtrb3idg4hggmcgrg.apps.googleusercontent.com',  // Specify the CLIENT_ID of the app that accesses the backend
+        audience: '**********************.apps.googleusercontent.com',  // Specify the CLIENT_ID of the app that accesses the backend
         // Or, if multiple clients access the backend:
         //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
     });
